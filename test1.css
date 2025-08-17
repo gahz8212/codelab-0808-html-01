@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 8px;
+}
+header > .logo {
+  margin-left: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+header > .logo:hover::after {
+  content: "";
+  background-color: #ccc;
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  text-align: center;
+  top: -10%;
+  left: -15%;
+  z-index: -1;
+}
+nav > ul {
+  display: flex;
+  gap: 50px;
+  margin-right: 50px;
+}
+nav > ul > li {
+  cursor: pointer;
+  letter-spacing: 4px;
+  position: relative;
+}
+nav > ul > li:hover::after {
+  content: "";
+  background-color: #ccc;
+  position: absolute;
+  width: 120%;
+  height: 130%;
+  text-align: center;
+  top: -10%;
+  left: -15%;
+  z-index: -1;
+}
+
+header > .logo {
+}
+header > nav > ul {
+}
+main.containers {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+main > .container {
+  margin: 0 auto;
+
+  max-width: 1500px;
+  flex-shrink: 1; /*???? */
+  padding: 5rem 0 0.5rem 0;
+}
+main.containers > .image {
+  margin-top: 56px;
+}
+/* main.containers > .container {
+} */
+main.containers img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.container {
+  /* background: yellow; */
+}
+.container > .title {
+  font-size: 1rem;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+}
+.container.projects > .title {
+  font-size: 1rem;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 2.5rem;
+}
+.container.about > .title {
+  font-size: 1rem;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 1rem;
+}
+.container.contact > .title {
+  font-size: 1rem;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0rem;
+}
+.container .title h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  line-height: 1;
+  /* margin-bottom: 1.5rem; */
+}
+
+.container.about > .message {
+  /* margin: 0;
+  padding: 0; */
+  font-weight: 300;
+  line-height: 1;
+
+  margin-bottom: 3rem;
+  /* color: red; */
+}
+.container.contact > .message {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  line-height: 2.5;
+}
+
+.img-wrappers {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.img-wrappers > .img.wrapper {
+  /* flex-grow: 1; */
+  width: calc(25% - 20px);
+  position: relative;
+  min-width: 200px;
+}
+@media (max-width: 990px) {
+  .img-wrappers > .img.wrapper {
+    /* flex-grow: 1; */
+    margin: 0 auto;
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 600px) {
+  .img-wrappers > .img.wrapper {
+    margin: 0 auto;
+    /* flex-grow: 1; */
+    width: calc(100% - 20px);
+  }
+}
+
+.img-wrappers > .img.wrapper > .title {
+  background: black;
+  color: white;
+  display: inline;
+  position: absolute;
+  padding: 0.5rem;
+}
+.about .infos .info {
+  padding: 0.5rem 0;
+}
+.about .infos .name {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.about .infos .job {
+  color: #555;
+}
+.about .infos .btn-contact {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+.contact .inputs {
+  margin-bottom: 1rem;
+}
+.contact .inputs:last-child {
+  margin-bottom: 0;
+}
+.contact input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact input[type="button"] {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: black;
+  color: #ddd;
+}
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+.footer a {
+  color: inherit;
+}
