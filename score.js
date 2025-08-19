@@ -23,13 +23,14 @@ function onScore() {
       tr.append(td);
     }
     td = document.createElement("td");
-    td.className = "total";
     td.innerText = sum;
+    td.className = "total";
     rank.push(sum);
     rank.sort((a, b) => b - a);
     tr.append(td);
     td = document.createElement("td");
     td.innerText = (sum / (score[i].length - 1)).toFixed(1);
+    td.className = "avg";
     tr.append(td);
     // td = document.createElement("td");
     // td.innerText = rank.indexOf(sum)+1;
@@ -38,11 +39,14 @@ function onScore() {
     sum = 0;
     tbody.append(tr);
     if (i >= score.length - 1) {
-      console.log(rank);
+      // console.log(rank);
       const totals = document.getElementsByClassName("total");
+      const avg = document.getElementsByClassName("avg");
       const newTotal = Array.from(totals);
       newTotal.map((total, index) => {
-        console.log(rank.indexOf(Number(total.innerText)) + 1);
+        td = document.createElement("td");
+        td.innerText = rank.indexOf(Number(total.innerText)) + 1;
+        avg[index].after(td);
       });
     }
   }
