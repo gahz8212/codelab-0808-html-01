@@ -1,0 +1,30 @@
+.containers {
+  width: 100%;
+  max-width: 500px;
+  margin: 5em auto;
+}
+.btn-wrap {
+  text-align: right;
+  margin-bottom: 1em;
+}
+.btn-wrap button {
+  padding: 0.5em 1em;
+  color: white;
+  background-color: black;
+  border: none;
+  outline: none;
+}
+.std-tbl {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid gray;
+}
+th {
+  background: lightgray;
+}
+th:nth-of-type(2) {
+  width: 100px;
+}
