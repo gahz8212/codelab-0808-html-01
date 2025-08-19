@@ -23,6 +23,7 @@ function onScore() {
       tr.append(td);
     }
     td = document.createElement("td");
+    td.className = "total";
     td.innerText = sum;
     rank.push(sum);
     rank.sort((a, b) => b - a);
@@ -30,13 +31,19 @@ function onScore() {
     td = document.createElement("td");
     td.innerText = (sum / (score[i].length - 1)).toFixed(1);
     tr.append(td);
-
-    console.log(rank);
-    td = document.createElement("td");
-    td.innerText = rank.indexOf(sum)+1;
-    tr.append(td);
+    // td = document.createElement("td");
+    // td.innerText = rank.indexOf(sum)+1;
+    // tr.append(td);
 
     sum = 0;
     tbody.append(tr);
+    if (i >= score.length - 1) {
+      console.log(rank);
+      const totals = document.getElementsByClassName("total");
+      const newTotal = Array.from(totals);
+      newTotal.map((total, index) => {
+        console.log(rank.indexOf(Number(total.innerText)) + 1);
+      });
+    }
   }
 }
